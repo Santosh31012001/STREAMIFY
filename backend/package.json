@@ -1,15 +1,17 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
+  "description": "Backend server for the application",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
   "type": "module",
   "license": "ISC",
-    "dependencies": {
+  "dependencies": {
+    "backend": "file:",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
