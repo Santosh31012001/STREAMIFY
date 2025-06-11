@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
 });
 
 // Importing routes
+app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.listen(PORT, () => {
