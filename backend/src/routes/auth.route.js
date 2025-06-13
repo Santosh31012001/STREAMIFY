@@ -1,11 +1,18 @@
 import express from 'express';
-import { login, logout, signup } from '../controllers/auth.controller.js';
+import { login, logout, signup ,onboard } from '../controllers/auth.controller.js';
+import { protectRoute } from '../middleware/auth.middleware.js';
+
 const router = express.Router();
 
-router.get("/signup", signup);
+router.post("/signup", signup);
+router.post("/login", login);
+router.post("/logout", logout);
 
-router.get("/login", login);
+router.post("/onboarding" , protectRoute ,onboard);
 
-router.get("/logout", logout);
+//check if user is logged in
+router.get("/me", protectRoute, (req, res) => {
+  res.status(200).json({ success: true, user: req.user });
+});
 
 export default router;
