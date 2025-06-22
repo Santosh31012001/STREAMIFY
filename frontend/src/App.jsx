@@ -16,7 +16,7 @@ const App = () => {
   const { data:authData, isLoading, error } = useQuery({ 
     queryKey: ["authUser"],
     queryFn: async () => {
-      const res = await axiosInstance.get("/api/me");
+      const res = await axiosInstance.get("/auth/me");
       return res.data;
     },
     retry:false, // auth check
