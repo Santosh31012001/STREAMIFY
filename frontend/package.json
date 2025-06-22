@@ -13,6 +13,7 @@
     "@tanstack/react-query": "^5.80.10",
     "axios": "^1.10.0",
     "frontend": "file:",
+    "lucide-react": "^0.522.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
