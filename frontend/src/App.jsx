@@ -7,21 +7,18 @@ import CallPage from './pages/CallPage';
 import ChatPage from './pages/ChatPage';
 import OnboardingPage from './pages/OnboardingPage';
 
-import { useQuery } from "@tanstack/react-query";
-import { axiosInstance } from "./lib/axios";
+
+import PageLoader from "./components/PageLoader";
+import useAuthUser from "./hooks/useAuthUser";
 
 
 const App = () => {
-  // tankStack query example
-  const { data:authData, isLoading, error } = useQuery({ 
-    queryKey: ["authUser"],
-    queryFn: async () => {
-      const res = await axiosInstance.get("/auth/me");
-      return res.data;
-    },
-    retry:false, // auth check
-  });
-  const authUser = authData?.user;   
+  // tankStack query 
+
+ const {isLoading , authUser} = useAuthUser();
+  
+  
+  if(isLoading)return <PageLoader/>
 
   return (
     <div className=" h-screen" data-theme="valentine">
