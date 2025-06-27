@@ -10,6 +10,7 @@ import OnboardingPage from './pages/OnboardingPage';
 
 import PageLoader from "./components/PageLoader";
 import useAuthUser from "./hooks/useAuthUser";
+import  Layout  from "./components/Layout";
 
 
 const App = () => {
@@ -26,8 +27,12 @@ const App = () => {
   return (
     <div className=" h-screen" data-theme="dark">
       <Routes>
-        <Route path="/" element={isAuthenticated && isOnboarded ? (
-          <HomePage />
+        <Route path="/" 
+        element={
+          isAuthenticated && isOnboarded ? (
+            <Layout showSidebar={true}>
+              <HomePage />
+            </Layout>
         ) : <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />} 
         />
         <Route path="/signup" 
