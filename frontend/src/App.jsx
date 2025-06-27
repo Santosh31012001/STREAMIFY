@@ -11,12 +11,14 @@ import OnboardingPage from './pages/OnboardingPage';
 import PageLoader from "./components/PageLoader";
 import useAuthUser from "./hooks/useAuthUser";
 import  Layout  from "./components/Layout";
+import { useThemeStore } from "./store/useThemeStore";
 
 
 const App = () => {
   // tankStack query 
 
  const {isLoading , authUser} = useAuthUser();
+ const{theme} =useThemeStore();
 
  const isAuthenticated = Boolean(authUser);
  const isOnboarded = Boolean(authUser?.isOnboarded);
@@ -25,7 +27,7 @@ const App = () => {
   if(isLoading)return <PageLoader/>
 
   return (
-    <div className=" h-screen" data-theme="dark">
+    <div className=" h-screen" data-theme={theme}>
       <Routes>
         <Route path="/" 
         element={
