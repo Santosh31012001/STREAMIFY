@@ -7,8 +7,8 @@ A modern full-stack chat and video call application for language learners, built
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
-- [Setup & Installation](#setup--installation)
-- [Usage](#usage)
+
+
 
 
 ---
@@ -50,21 +50,6 @@ STREAMIFY/
       store/       # Zustand state
       App.jsx      # Main app/router
 ```
-
-## Setup & Installation
-
-### Prerequisites
-- Node.js (v18+ recommended)
-- npm or yarn
-- MongoDB instance (local or cloud)
-- Stream API credentials ([get here](https://getstream.io/))
-
-### 1. Clone the repository
-```bash
-git clone <repo-url>
-cd STREAMIFY
-```
-
 ### 2. Backend Setup
 ```bash
 cd backend
@@ -79,8 +64,3 @@ cd frontend
 npm install
 npm run dev
 ```
-
-## Usage
-- Visit the frontend at [http://localhost:5173](http://localhost:5173)
-- The backend runs on [http://localhost:3000](http://localhost:3000) (or your configured port)
-- Sign up, onboard, find friends, chat, and call!
