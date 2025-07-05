@@ -23,7 +23,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://streamify-kudd.vercel.app"
+     "https://streamify-hslq.vercel.app"
     ],
     credentials: true,   //allow frontend to access cookies
   })
