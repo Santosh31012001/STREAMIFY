@@ -21,9 +21,13 @@ const PORT = process.env.PORT;
 
 app.use(
   cors({
-  origin: "http://localhost:5173",
-  credentials: true,   //allow frontend to access cookies
-}));
+    origin: [
+      "http://localhost:5173",
+      "https://streamify-kudd.vercel.app"
+    ],
+    credentials: true,   //allow frontend to access cookies
+  })
+);
 app.use(express.json());
 app.use(cookieParser());
 
