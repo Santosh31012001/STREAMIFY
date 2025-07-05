@@ -22,8 +22,9 @@ const PORT = process.env.PORT;
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
       "https://streamify-hslq.vercel.app",
+      "http://localhost:5173",
+      
     ],
     credentials: true,   //allow frontend to access cookies
   })
