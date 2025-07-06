@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start":"vite build"
+    "start":"vite build && vite"
   },
   "dependencies": {
     "@stream-io/video-react-sdk": "^1.18.7",
