@@ -12,6 +12,8 @@ import { connectDB } from './lib/db.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
+
 app.use(
   cors({
     origin: '*', // Allow all origins
@@ -34,6 +36,10 @@ app.use('/api/chat', chatRoutes);
 // app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 // });
+
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
