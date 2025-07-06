@@ -12,15 +12,9 @@ import { connectDB } from './lib/db.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-const allowedOrigins = [
-  'http://localhost:5173',
-  'https://streamify-mnth.vercel.app'
-];
-
 app.use(
   cors({
-    origin: true, // This will echo back the request's origin
-    credentials: true,
+    origin: '*', // Allow all origins
   })
 );
 
