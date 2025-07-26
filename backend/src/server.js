@@ -16,8 +16,8 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use(cors({
-  origin: '*',
-  credentials: true,
+  origin: 'https://streamify-pkyo.vercel.app',
+  credentials: true // if you're using cookies/auth
 }));
 
 app.use(express.json());
