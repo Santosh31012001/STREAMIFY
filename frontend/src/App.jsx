@@ -6,7 +6,7 @@ import NotificationsPage from './pages/NotificationsPage';
 import CallPage from './pages/CallPage';
 import ChatPage from './pages/ChatPage';
 import OnboardingPage from './pages/OnboardingPage';
-import FriendsPage from './pages/FriendsPage';
+import FriendPage from './pages/FriendPage';
 
 
 import PageLoader from "./components/PageLoader";
@@ -91,7 +91,7 @@ const App = () => {
           element={
             isAuthenticated && isOnboarded ? (
               <Layout showSidebar={true}>
-                <FriendsPage />
+                <FriendPage />
               </Layout>
             ) : <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />}
         />
