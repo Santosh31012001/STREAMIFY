@@ -4,10 +4,9 @@ import useAuthUser from '../hooks/useAuthUser';
 import Layout from '../components/Layout';
 import FriendCard from "../components/FriendCard";
 import NoFriendsFound from "../components/NoFriendsFound";
-import { getUserFriends } from '../api/friends'; // Adjust the import based on your file structure
+import { getUserFriends } from "../lib/api";
 
 const FriendPage = () => {
-  const { authUser } = useAuthUser();
   const { data: friends = [], isLoading: loadingFriends } = useQuery({
     queryKey: ["friends"],
     queryFn: getUserFriends,
