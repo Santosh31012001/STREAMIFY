@@ -6,6 +6,7 @@ import NotificationsPage from './pages/NotificationsPage';
 import CallPage from './pages/CallPage';
 import ChatPage from './pages/ChatPage';
 import OnboardingPage from './pages/OnboardingPage';
+import FriendsPage from './pages/FriendsPage';
 
 
 import PageLoader from "./components/PageLoader";
@@ -86,6 +87,14 @@ const App = () => {
               !isOnboarded ? <OnboardingPage /> : <Navigate to="/" />
             ) : <Navigate to="/login" />
           } />
+        <Route path="/friends"
+          element={
+            isAuthenticated && isOnboarded ? (
+              <Layout showSidebar={true}>
+                <FriendsPage />
+              </Layout>
+            ) : <Navigate to={!isAuthenticated ? "/login" : "/onboarding"} />}
+        />
       </Routes>
     </div>
   )
